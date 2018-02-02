@@ -39,10 +39,10 @@
               <a class="nav-link" href="index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="post.html">Booking</a> 
+              <a class="nav-link" href="<?php echo base_url(); ?>Loginadmin/tampilform">Booking</a> 
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Cek Pemesanan</a>
+              <a class="nav-link" href="<?php echo base_url(); ?>Loginadmin/tampilabout">Cek Pemesanan</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?= base_url();?>login">Login</a>

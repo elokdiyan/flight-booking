@@ -32,7 +32,7 @@ defined('BASEPATH') or exit('no direct script access');
 
 				if ($db_username = $username && $db_password = $password){
 					# code...
-					redirect('welcome');
+					redirect(base_url().'Loginadmin');
 				}
 			}
 
