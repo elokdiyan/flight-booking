@@ -14,13 +14,13 @@ class Loginadmin extends CI_Controller
 	public function index()
 	{
 		# code...
-		$this->load->view('vindex');
+		$this->load->view('index');
 	}
 
 	public function adduser()
 	{
 		$username=$this->input->post('username');
-		$password=$this->input->post('password');
+		$password=md5($this->input->post('password'));
 		$fullname=$this->input->post('fullname');
 		$level=$this->input->post('level');
 		$datauser = array(
@@ -37,12 +37,12 @@ class Loginadmin extends CI_Controller
 
 	public function tampilform()
 	{
-		$this->load->view('post');
+		$this->load->view('booking');
 	}
 
-	public function tampilabout()
+	public function tampilpesanan()
 	{
-		$this->load->view('about');
+		$this->load->view('pesanan');
 	}
 
 		public function tampilcontact()

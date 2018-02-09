@@ -1,5 +1,0 @@
-password : Adi12345
-MD5 : 02777fcb49af7cfbf18a902653d52b54
-
-hasing : $2y$09$.MqnKLw3vK3DyVtPBIk/We907Eny1YGlwFJlNT0blMEESPkprq/vm
-password : admin
