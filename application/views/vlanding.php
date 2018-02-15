@@ -35,7 +35,7 @@
 			<div class="navbar-collapse collapse">							
 				<div class="menu">
 					<ul class="nav nav-tabs" role="tablist">
-						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin">Home</a></li>
+						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilindex">Home</a></li>
 						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilform">Booking</a></li>
 						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilpesanan">Cek Pemesanan</a></li>
 						<li role="presentation"><a href="<?php echo base_url(); ?>Login">Login</a></li>

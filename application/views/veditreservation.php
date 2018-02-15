@@ -41,9 +41,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="book-appointment">
 			<h2>Personal Details</h2>
 			<div class="book-agileinfo-form">
-				<form action="<?php echo base_url(); ?>reservation/prosestambah" method="post">
+				<form action="<?php echo base_url(); ?>reservation/editproses" method="post">
+				<?php foreach($editdata as $row): ?>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
+						<input type="hidden" name="id" value="<?php echo $row->id; ?>">
 							<input type="text" name="name" placeholder="Full Name" required="">
 						</div>
 						<div class="agileits-btm-spc form-text2">
@@ -57,41 +59,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<h2 class="sub-head-w3ls">Booking Details</h2>
 					<div class="main-agile-sectns">
 					<div class="agileits-btm-spc form-text1">
-							<input type="text" name="reservationcode" placeholder="Reservation Code" required="">
+							<input type="text" name="reservationcode" placeholder="Reservation Code" required="" value="<?php echo $row->reservation_code; ?>">
 						</div>
 					<div class="agileits-btm-spc form-text2">
 							<input id="datepicker" name="reservationat" type="text" placeholder="Reservation At" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
+							    required="" value="<?php echo $row->reservation_at; ?>">
 						</div>
 					</div>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
 							<input id="datepicker1" name="reservationdate" type="text" placeholder="Reservation Date" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'mm/dd/yyyy';}"
-							    required="">
+							    required="" value="<?php echo $row->reservation_date; ?>">
 						</div>
 						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="seatcode" placeholder="Seat Code" required="">
+							<input type="text" name="seatcode" placeholder="Seat Code" required="" value="<?php echo $row->seat_code; ?>">
 						</div>
 					</div>
 					<div class="main-agile-sectns">
 						<div class="agileits-btm-spc form-text1">
-							<input type="text" name="customerid" placeholder="Customer Id" required="">
+							<input type="text" name="customerid" placeholder="Customer Id" required="" value="<?php echo $row->customer_id; ?>">
 						</div>
 						<div class="agileits-btm-spc form-text2">
-							<input type="text" name="ruteid" placeholder="Rute Id" required="">
+							<input type="text" name="ruteid" placeholder="Rute Id" required="" value="<?php echo $row->rute_id; ?>">
 						</div>
 					</div>
 					<div class="main-agile-sectns">
-				<div class="agileits-btm-spc form-text2">
-							<input type="text" id="timepicker" name="departat" class="timepicker form-control" placeholder="Depart At" value="">
+					<div class="agileits-btm-spc form-text2">
+							<input type="text" id="timepicker" name="departat" class="timepicker form-control" placeholder="Depart At" value="" value="<?php echo $row->depart_at; ?>">
 						</div>
 					<div class="agileits-btm-spc form-text1">
-							<input type="text" name="price" placeholder="Price" required="">
+							<input type="text" name="price" placeholder="Price" required="" value="<?php echo $row->price; ?>">
 						</div>
 					</div>
 					<div class="main-agile-sectns">
 					<div class="agileits-btm-spc form-text1">
-							<input type="text" name="userid" placeholder="User Id" required="">
+							<input type="text" name="userid" placeholder="User Id" required="" value="<?php echo $row->user_id; ?>">
 						</div>
 					</div>
 					<!-- <div class="main-agile-sectns"> -->
@@ -115,6 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					
 					<input type="submit" value="Submit" style="width:1285.95px;">
 					<div class="clear"></div>
+					<?php endforeach; ?>
 				</form>
 			</div>
 

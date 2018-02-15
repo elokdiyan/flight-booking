@@ -35,7 +35,7 @@
   			<div class="navbar-collapse collapse">							
   				<div class="menu">
   					<ul class="nav nav-tabs" role="tablist">
-  						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin">Home</a></li>
+  						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilindex">Home</a></li>
   						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilform">Booking</a></li>
   						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilpesanan">Cek Pemesanan</a></li>
   						<li role="presentation"><a href="<?php echo base_url(); ?>Loginadmin/tampilcontact">Contact</a></li>						
@@ -48,7 +48,7 @@
   		<h2>Booking</h2>
   		<div class="container">
   			<div class="col-md-10 col-md-offset-1" >
-  				<img src="<?php echo base_url(); ?>img/9.jpg" alt="" class="img-responsive" />	
+  				<img src="<?php echo base_url(); ?>img/pesawat2.jpg" alt="" class="img-responsive" style="width:100%;background-size:cover;overlay-y:hidden;height:500px;" />	
   			</div>
   		</div>
   	</div>

@@ -11,7 +11,11 @@ defined('BASEPATH') or exit('no direct script access');
 			parent::__construct();
 		}
 
-		public function index()
+		function index(){
+			$this->load->view('vloginview');
+		}
+
+		public function action()
 		{
 			# code...
 
@@ -36,7 +40,7 @@ defined('BASEPATH') or exit('no direct script access');
 				}
 			}
 
-			$this->load->view('vLoginview');
+			
 		}
 	}
 	?>

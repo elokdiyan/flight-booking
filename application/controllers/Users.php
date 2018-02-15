@@ -8,7 +8,26 @@ class Users extends CI_Controller{
 
 		 $this->load->view('user_data', $data);
 	}
-	function add(){}
+	function tambahuserlte(){
+		$this->load->view('tambahuserlte');
+	}
+	function adduser()
+	{
+		$username=$this->input->post('username');
+		$password=md5($this->input->post('password'));
+		$fullname=$this->input->post('fullname');
+		$level=$this->input->post('level');
+		$datauser = array(
+			'username' => $username,'password' => $password,'fullname' => $fullname,'level' => $level
+			);
+		$submitdata = $this->user_m->saveUser($datauser);
+		if ($submitdata==1){
+			$this->session->set_flashdata('messages', '<div class="alert alert-success">data telah tersimpan</div>');
+		}else{
+			$this->session->set_flashdata('messages', '<div class="alert alert-success">data tidak tersimpan</div>');
+		}
+		redirect(base_url().'Users/index');
+	}
 	function del($id){
 		$this->load->model('user_m');
 		// $id = $_GET['id'];

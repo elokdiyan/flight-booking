@@ -14,7 +14,7 @@ class Loginadmin extends CI_Controller
 	public function index()
 	{
 		# code...
-		$this->load->view('index');
+		$this->load->view('vindex');
 	}
 
 	public function adduser()

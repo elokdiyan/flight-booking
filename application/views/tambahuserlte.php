@@ -17,7 +17,6 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/skins/_all-skins.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>assets/bower_components/datatables.net-bs/css/dataTables.bootstrap.min.css">
 
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -218,7 +217,7 @@
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
         <li>
-          <a href="<?php echo base_url(); ?>Loginadmin">
+          <a href="#">
             <i class="fa fa-home"></i> <span>Dashboard</span>
             <span class="pull-right-container">
             </span>
@@ -245,45 +244,50 @@
 
     <!-- Main content -->
     <section class="content">
-
-          <div class="box">
-            <div class="box-header">
-              <a href="<?php echo base_url(); ?>Users/tambahuserlte" class="btn btn-primary">Tambah User</a>
+    <div class="col-md-7">
+                <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Add User</h3>
             </div>
             <!-- /.box-header -->
-            <div class="box-body">
-              <table id="example1" class="table table-bordered table-striped">
-                <thead>
-                <tr>
-                  <th>No</th>
-				  <th>Username</th>
-				  <th>Password</th>
-				  <th>Fullname</th>
-				  <th>Level</th>
-				  <th>Aksi</th>
-                </tr>
-                </thead>
-                <tbody>
-                <?php
-					$nomor = 1;
-					foreach ($tbuser as $row) {
-				?>
-                <tr>
-                  <td><?php echo $nomor++; ?></td>
-				  <td><?php echo $row->username ?></td>
-				  <td><?php echo $row->password ?></td>
-				  <td><?php echo $row->fullname ?></td>
-				  <td><?php echo $row->level ?></td>
-				  <td><a class="btn btn-danger" href="<?php echo base_url('Users/del/'.$row->id); ?>"> Hapus </a> <a class="btn btn-warning" href="<?php echo base_url('edituser/index/'.$row->id); ?>"> Edit</a></td>
-                </tr>
-                <?php
-					}
-				?>
-                </tbody>
-              </table>
-            </div>
-            <!-- /.box-body -->
+            <!-- form start -->
+            <form role="form" action="<?php echo base_url(); ?>Users/adduser" method="POST">
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Username</label>
+                  <input type="text" class="form-control" id="username" name="username" placeholder="username">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input type="password" class="form-control" id="password" name="password" placeholder="password">
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Fullname</label>
+                  <input type="text" class="form-control" id="fullname" name="fullname" placeholder="fullname">
+                </div>
+                <div class="col-sm-2">
+                  <label for="inputlevel3" class="control-label">Level</label>
+
+                </div>
+                    <div class="col-sm-10">
+                 <!--  <input type="hidden" class="form-control" id="level" name="level" value="user"> -->
+                   <select name="level" id="level"> 
+                   <option value="1">Admin</option>
+                   <option value="2">Administrator</option>
+                   <option value="3">Helper</option>
+                   <option value="4">Operator</option>
+                   <option value="5">User</option> 
+                   </select>
+                </div>
+              </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
           </div>
+    </div>
       <!-- Default box -->
         <!-- /.box-body -->
         <!-- /.box-footer-->
@@ -511,21 +515,7 @@
 <script src="<?php echo base_url();?>assets/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo base_url();?>assets/dist/js/demo.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
-<script src="<?php echo base_url();?>assets/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
-<script>
-  $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  })
-</script>
+
 <script>
   $(document).ready(function () {
     $('.sidebar-menu').tree()
