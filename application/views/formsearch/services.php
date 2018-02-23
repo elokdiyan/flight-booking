@@ -7,11 +7,11 @@
     <title>Flight Booking</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/jquery.bxslider.css">
-	<link href="css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>css/bootstrap.min.css" rel="stylesheet">
+	<link rel="<?php echo base_url(); ?>stylesheet" href="css/animate.css">
+	<link rel="<?php echo base_url(); ?>stylesheet" href="css/font-awesome.min.css">
+	<link rel="<?php echo base_url(); ?>stylesheet" href="css/jquery.bxslider.css">
+	<link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -53,7 +53,7 @@
     </div> -->
     <div class="slider">
 		<div class="img-responsive">
-			<img src="img/pesawat1.jpg" alt="" style="width:100%;background-size:cover;overlay-y:hidden;height:550.98px;" />
+			<img src="<?php echo base_url(); ?>img/pesawat1.jpg" alt="" style="width:1349px;background-size:cover;overlay-y:hidden;height:450.98px;">
 	
 			<!-- <!-- <ul class="bxslider">	 -->
 			<!-- <img src="img/pesawat1.jpg" alt="" style="width:cover;background-size:cover;overlay-y:hidden;" />			 -->
@@ -63,16 +63,43 @@
 			<!-- </ul> -->
 		</div>	
     </div>
+    <?php foreach ($rutes as $row): ?>
+        <table class="table table-hover table-responsive text-center" style="color:black;">
+            <thead>
+                <tr>
+                    <th class="text-center">Airlines</th>
+                    <th class="text-center">Depart At</th>
+                    <th class="text-center">Arrival At</th>
+                    <th class="text-center">Departure</th>
+                    <th class="text-center">Arrival</th>
+                    <th class="text-center">Price</th>
+                    <th class="text-center"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="center"><?php echo $row->description;?></td>
+                    <td class="center"><?php echo $row->depart_at;?></td>
+                    <td class="center"><?php echo $row->arrival_at;?></td>
+                    <td class="center"><?php echo $row->rute_from;?></td>
+                    <td class="center"><?php echo $row->rute_to;?></td>
+                    <td class="center"><?php echo $row->price;?></td>
+                    <td class="center"><a href="<?php echo base_url('formsearch/pesan/'.$row->transportation_id.'/'.$row->id); ?>" class="btn btn-primary center-block">Pesan</a></td>
+                </tr>
+            </tbody>
+        </table>
+        <?php endforeach ?>
+        </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/jquery-2.1.1.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
-	<script src="js/wow.min.js"></script>
-	<script src="js/jquery.easing.1.3.js"></script>
-	<script src="js/jquery.bxslider.min.js"></script>
-	<script src="js/jquery.isotope.min.js"></script>
-	<script src="js/fancybox/jquery.fancybox.pack.js"></script>
-	<script src="js/functions.js"></script>
+    <script src="<?php echo base_url(); ?>js/bootstrap.min.js"></script>
+	<script src="<?php echo base_url(); ?>js/wow.min.js"></script>
+	<script src="<?php echo base_url(); ?>js/jquery.easing.1.3.js"></script>
+	<script src="<?php echo base_url(); ?>js/jquery.bxslider.min.js"></script>
+	<script src="<?php echo base_url(); ?>js/jquery.isotope.min.js"></script>
+	<script src="<?php echo base_url(); ?>js/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="<?php echo base_url(); ?>js/functions.js"></script>
 	<script>
 	wow = new WOW(
 	 {
